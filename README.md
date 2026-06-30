@@ -1,6 +1,6 @@
 # PhoneStoreAIBot
 
-AI-powered Telegram sales assistant for **TechPhone Store** — a phone retailer in Uzbekistan. The bot (named **Bekhruz**) helps customers search inventory, compare phones, and tracks their interests across sessions. Replies in Uzbek, Russian, or English depending on the user.
+AI-powered Telegram sales assistant for **TechPhone Store** — a phone retailer in Uzbekistan. The bot helps customers search inventory, compare phones, and tracks their interests across sessions. Replies in Uzbek, Russian, or English depending on the user.
 
 ## Stack
 
