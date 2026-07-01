@@ -68,10 +68,19 @@ class SendSearchResult(SendMessage):
         order = {pid: i for i, pid in enumerate(args.id_list)}
         phones.sort(key=lambda p: order.get(p.id, 999))
 
-        lines = [
-            f"• *{p.name}* ({p.brand_id}) — {p.price:,} UZS\n  {p.buy_link}"
-            for p in phones
-        ]
+        lines = []
+        for p in phones:
+            specs = []
+            if p.ram_options:
+                specs.append(f"RAM: {'/'.join(str(v) for v in p.ram_options)} GB")
+            if p.rom_options:
+                specs.append(f"ROM: {'/'.join(str(v) for v in p.rom_options)} GB")
+            if p.colors:
+                specs.append(f"Colors: {', '.join(p.colors)}")
+            specs_line = f"\n  {' | '.join(specs)}" if specs else ""
+            lines.append(
+                f"• *{p.name}* ({p.brand_id}) — {p.price:,} UZS{specs_line}\n  {p.buy_link}"
+            )
         text = "\n\n".join(lines)
         if args.extra_text:
             text += f"\n\n{args.extra_text}"
