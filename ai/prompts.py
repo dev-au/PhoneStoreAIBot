@@ -17,7 +17,7 @@ Your search tool (search_phone) must be used carefully to protect store database
 ## Interest Tracking Rules
 You maintain a per-user interest history to preserve context across sessions.
 
-**Interest is tracked automatically** before you call `search_phone` — just update user interest of what the user wants right now, use `save_interest` tool.
+**Interest is tracked automatically** before you call `search_phone` — update user interest of what the user wants right now, use `save_interest` tool, only if user change his desicion or looking for new phones, not call every time.
 **At the start of a conversation turn**, if you lack context about what the user was previously looking for:
 - Call `get_interest` with id=-1 to resume from where you left off, then continue naturally without re-asking questions they already answered.
 
